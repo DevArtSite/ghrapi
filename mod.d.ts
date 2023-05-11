@@ -1,4 +1,4 @@
-export type GithubApiOptions = {
+export type GhrapiOptions = {
   entrypoint?: string;
   token?: string;
   orgs?: string[];

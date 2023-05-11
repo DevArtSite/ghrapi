@@ -1,11 +1,11 @@
 import type {
   OrgReposOptions,
   UserReposOptions,
-  GithubApiOptions,
+  GhrapiOptions,
   Repo,
 } from "./mod.d.ts";
 
-export default class GithubApi {
+export default class Ghrapi {
   ratelimitRemaining: number;
   rateLimitResetDate?: Date;
   entrypoint: string;
@@ -17,7 +17,7 @@ export default class GithubApi {
     token,
     orgs = [],
     me,
-  }: GithubApiOptions) {
+  }: GhrapiOptions) {
     this.ratelimitRemaining = 0;
     this.entrypoint = entrypoint;
     this.#token = token || Deno.env.get("GITHUB_TOKEN");
