@@ -3,6 +3,7 @@ import type {
   UserReposOptions,
   GhrapiOptions,
   Repo,
+  RateLimit,
 } from "./mod.d.ts";
 
 export default class Ghrapi {
@@ -69,10 +70,9 @@ export default class Ghrapi {
     return (repo as Repo);
   }
 
-  // deno-lint-ignore no-explicit-any
-  async test(): Promise<any> {
+  async rateLimit(): Promise<RateLimit> {
     const res = await this.get(this.url("/rate_limit"));
-    console.log(res);
+    return res;
   }
 
   async userRepos(options?: {

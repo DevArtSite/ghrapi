@@ -5,6 +5,71 @@ export type GhrapiOptions = {
   me: string;
 }
 
+export type RateLimit = {
+  resources: {
+    core: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    search: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    graphql: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    integration_manifest: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    source_import: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    code_scanning_upload: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    actions_runner_registration: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    scim: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    },
+    dependency_snapshots: {
+      limit: number,
+      used: number,
+      remaining: number,
+      reset: number
+    }
+  },
+  rate: {
+    limit: number,
+    used: number,
+    remaining: number,
+    reset: number
+  }
+}
+
 export type OrgReposOptions = {
     type?: "all" | "public" | "private" | "forks" | "sources" | "member" | "internal";
     sort?: "created" | "updated" | "pushed" | "full_name";
